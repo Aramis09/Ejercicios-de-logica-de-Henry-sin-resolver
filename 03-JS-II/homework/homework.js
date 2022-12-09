@@ -78,51 +78,74 @@ function operadoresLogicos(num1, num2, num3) {
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
 }
 
-function esPrimo(numero) {
+function esPrimo(numero) { 
   // Devuelve "true" si "numero" es primo
   // De lo contrario devuelve "falso"
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  if(numero < 2) return false;
-  if(numero ===2) return true;
-  for(let i = 2; i < numero ; i++){
-    if(numero % i) return false;
+  if( numero < 2 ) return false;
+  if( numero === 2) return true;
+  for(let i = 2 ; i <= numero - 1 ;i++){
+    if(numero % i === 0) return false;
+        
   };
+  // cuando el bucle termina, se ejecuta el codigo de abajo del bucle
   return true;
 };
 
+
+
+
+
+
 function esVerdadero(valor){
-  //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
+  //Escribe una función que reciba un valor booleano y imprima “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  if( valor === true ) return 'Soy verdadero';
+  return 'Soy falso'; 
 }
+
+
+
+
+
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
-  
+  //Escribe tu código aquí. 
+  let tablaDel6 = []; 
+  for(let i = 0 ; i <= 10 ; i++) {
+    tablaDel6.push( 6 * i ); 
+  };
+  return tablaDel6;
 }
+
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  let numeroString = String(numero);
+  if(numeroString.length === 3)  return true;
+  return false;
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  let i = 1; 
+  let num = numero;
+  let contador = 1;
+
   do {
-    numero = numero + 5;
-    i++;
+    num = num + 5;
+    contador ++
   }
-  while(i <= 8);
-  return numero;
+
+  while(contador <= 8);
+  return num;
 }
   // No modificar nada debajo de esta línea
 // --------------------------------
